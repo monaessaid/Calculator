@@ -2,7 +2,9 @@ import React from 'react';
 
 function CalculatorButton(props) {
     return (
-        <input type= 'button' />
+        <input
+            type= 'button'
+            value= {props.caption}/>
     );
 }
 
