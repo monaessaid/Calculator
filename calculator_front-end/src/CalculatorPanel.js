@@ -11,6 +11,15 @@ function CalculatorPanel(props) {
         "="
     ];
 
-    
+    const calc_buttons = captions.map((value, index) => {
+        return <CalculatorButton caption={value} />
+    });
 
+    return(
+        <div>
+            {calc_buttons}
+        </div>
+    );
 }
+
+export default CalculatorPanel;
