@@ -16,7 +16,7 @@ function CalculatorPanel(props) {
     });
 
     return(
-        <div>
+        <div className="calculator-grid-container">
             {calc_buttons}
         </div>
     );
