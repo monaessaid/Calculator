@@ -1,5 +1,6 @@
 import React from 'react';
 import CalculatorButton from './CalculatorButton';
+import CalculatorDisplay from './CalculatorDisplay';
 
 function CalculatorPanel(props) {
 
@@ -17,6 +18,7 @@ function CalculatorPanel(props) {
 
     return(
         <div className="calculator-grid-container">
+            <CalculatorDisplay />
             {calc_buttons}
         </div>
     );
