@@ -33,7 +33,8 @@ function CalculatorPanel(props) {
 
     return(
         <div className="calculator-grid-container">
-            <CalculatorDisplay />
+            {/* Calculator result will be updated  when props.result is changed*/}
+            <CalculatorDisplay text={props.result}/>
             {calc_buttons}
         </div>
     );
