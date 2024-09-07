@@ -15,6 +15,18 @@ class Calculator extends React.Component {
 
     operationHandler(operation) {
 
+        if (this.state.numberIdx === 1) {
+            this.equalHandler();
+            return;
+        }
+
+        if ((operation === "subtract" || operation === "add") &&
+            this.state.numbers[this.state.numberIdx] === "")
+            {
+                this.numberHandler(operation === "subtract" ? "-" : "+");
+                return;
+            }
+
     }
 
     numberHandler(number) {
@@ -23,10 +35,10 @@ class Calculator extends React.Component {
     }
 
     updateNumber(newNumber) {
-        let newNumbers =  this.state.numbers;
+        let newNumbers = this.state.numbers;
         newNumbers[this.state.numberIdx] = newNumber;
         this.setState({
-            result:newNumbers[this.state.numberIdx],
+            result: newNumbers[this.state.numberIdx],
             numbers: newNumbers,
         });
     }
@@ -34,7 +46,7 @@ class Calculator extends React.Component {
     dotHandler() {
         const newNumber = this.state.numbers[this.state.numberIdx] + ".";
 
-        if(isNaN(newNumber)) {
+        if (isNaN(newNumber)) {
             return;
         }
 
@@ -49,11 +61,11 @@ class Calculator extends React.Component {
 
     }
 
-    render () {
+    render() {
 
         return (
             <div className="calculator-grid-container">
-                <CalculatorPanel 
+                <CalculatorPanel
                     result={this.state.result}
                     numberClicked={this.numberHandler.bind(this)}
                     operationClicked={this.operationHandler.bind(this)}
