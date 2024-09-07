@@ -9,6 +9,7 @@ class Calculator extends React.Component {
             result: "",
             numbers: ["", ""],
             numberIdx: 0,
+            operation: "",
         };
     }
 
@@ -17,11 +18,27 @@ class Calculator extends React.Component {
     }
 
     numberHandler(number) {
+        const newNumber = this.state.numbers[this.state.numberIdx] + number;
+        this.updateNumber(newNumber);
+    }
 
+    updateNumber(newNumber) {
+        let newNumbers =  this.state.numbers;
+        newNumbers[this.state.numberIdx] = newNumber;
+        this.setState({
+            result:newNumbers[this.state.numberIdx],
+            numbers: newNumbers,
+        });
     }
 
     dotHandler() {
+        const newNumber = this.state.numbers[this.state.numberIdx] + ".";
 
+        if(isNaN(newNumber)) {
+            return;
+        }
+
+        this.updateNumber(newNumber);
     }
 
     clearHandler() {
