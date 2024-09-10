@@ -27,6 +27,22 @@ class Calculator extends React.Component {
                 return;
             }
 
+            this.setOperation(operation);
+    }
+
+    setOperation(operation) {
+        this.setState({
+            operation: operation
+        });
+        this.nextNumber();
+    }
+
+    nextNumber() {
+        const newIdx = this.state.numberIdx === 0 ? 1 : 0;
+        this.setState({
+            result: this.state.numbers[newIdx],
+            numberIdx:newIdx,
+        });
     }
 
     numberHandler(number) {
