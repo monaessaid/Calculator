@@ -70,11 +70,40 @@ class Calculator extends React.Component {
     }
 
     clearHandler() {
-
+        this.setState(
+            {
+            result: "",
+            numbers: [],
+            numberIdx: 0,
+            }
+        );
     }
 
     equalHandler() {
 
+        if(this.state.numbers[0] === "" || this.state.numbers[1] === "") {
+            return;
+        }
+
+        this.props.calculatorApi.calculate(
+            this.state.numbers[0],
+            this.state.numbers[1],
+            operation,
+            (result)=> {
+                this.setResult(result);
+            });
+
+    }
+
+    setResult(result) {
+        const newNumbers = [result, ""];
+        const newNumberIdx = 0;
+        this.setState({
+            result: newNumbers[newNumberIdx],
+            numbers: newNumbers,
+            numberIdx: newNumberIdx,
+            operation:"",
+        });
     }
 
     render() {
