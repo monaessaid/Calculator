@@ -88,7 +88,7 @@ class Calculator extends React.Component {
         this.props.calculatorApi.calculate(
             this.state.numbers[0],
             this.state.numbers[1],
-            operation,
+            this.state.operation,
             (result)=> {
                 this.setResult(result);
             });

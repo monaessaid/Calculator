@@ -14,7 +14,7 @@ class CalculatorApi {
         fetch(this.makeURL(number1, number2, operation))
             .then(res => res.json())
             .then((response) => {
-                handler(response[result]);
+                handler(response[this.result]);
             },
             (err) => {
                 handler(err);
