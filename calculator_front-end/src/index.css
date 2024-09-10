@@ -18,7 +18,24 @@
   }
 
   .calculator-equal-button {
+    background-color: #066693;
+    color: white;
     grid-column: 1/span 4;
+  }
+
+  .calculator-buttons {
+    background-color: #066693;
+    color: white;
+  }
+
+  .calculator-buttons:hover {
+    background-color: #002434;
+    color: white;
+  }
+
+  .calculator-equal-button:hover {
+    background-color: #002434;
+    color: white;
   }
 
   .calculator-display {
