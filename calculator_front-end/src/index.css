@@ -5,14 +5,12 @@
 
  .App-header {
 
-    
   background-color: #18191d;
-
-  /* background-color: #282c34;
-    background-color: black;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
+  /* background-color: #282c34; */
+    /* background-color: black; */
+    /* min-height: 100vh; */
+    /* min-width: 100vw; */
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,25 +31,25 @@
   }
 
   .calculator-equal-button {
-    background-color: #066693;
-    color: white;
+    background-color: #3eb1e6;
+    color: #18191d;
     font-size: 50px;
     grid-column: 1/span 4;
   }
 
   .calculator-buttons {
-    background-color: #066693;
-    color: white;
+    background-color: #3eb1e6;
+    color: #18191d;
     font-size: 50px;
   }
 
   .calculator-buttons:hover {
-    background-color: #002434;
+    background-color: #0084c2;
     color: white;
   }
 
   .calculator-equal-button:hover {
-    background-color: #002434;
+    background-color: #0084c2;
     color: white;
   }
 
